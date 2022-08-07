@@ -1,7 +1,7 @@
 import express from 'express';
 import mongoose from 'mongoose';
 import bodyParser from 'body-parser';
-import { Strings } from "./src/const/strings";
+import { Strings } from "./const/strings";
 
 const user = require('./src/models/user');
 
