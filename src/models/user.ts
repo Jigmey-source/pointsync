@@ -1,4 +1,5 @@
 import mongoose from 'mongoose';
+import placemarker from './place_marker';
 
 export interface IUser extends mongoose.Document {
     blocked: Object,
@@ -24,7 +25,7 @@ export const userSchema = new mongoose.Schema({
     following: { type: Object, required: true },
     group: { type: String, required: true },
     hideFrom: { type: Object, required: true },
-    place_marker: { type: Object, required: true },
+    placemarker: { type: placemarker, required: true },
     posts: { type: Number, required: true },
     name: { type: String, required: true },
     platform: { type: Object, required: true },

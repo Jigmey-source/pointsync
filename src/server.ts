@@ -17,11 +17,6 @@ mongoose.connect(strings.mongouri).then(function () {
     });
 
     app.use("/users", router);
-
-    app.get('/users', function (req, res) {
-        var users = user.find();
-        res.send(users);
-    });
 });
 
 const port = process.env.PORT || 78;
