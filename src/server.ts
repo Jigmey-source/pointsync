@@ -42,7 +42,7 @@ mongoose.connect(strings.mongouri).then(function () {
     });
 });
 
-const PORT = process.env.PORT || 78;
-app.listen(PORT, function () {
-    console.log('server started at PORT:' + PORT);
+const port = process.env.PORT || 78;
+app.listen(port, function () {
+    console.log('server started at PORT:' + port);
 });
