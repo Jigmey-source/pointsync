@@ -1,6 +1,22 @@
 import mongoose from 'mongoose';
 
-const userSchema = new mongoose.Schema({
+export interface IUser extends mongoose.Document {
+    blocked: Object,
+    created_at: Date,
+    description: String,
+    followers: Number,
+    following: Object,
+    group: String,
+    hideFrom: Object,
+    place_marker: Object,
+    posts: Number,
+    name: String,
+    platform: Object,
+    profile_picture: Object,
+    userId: String,
+};
+
+export const userSchema = new mongoose.Schema({
     blocked: { type: Object, required: true },
     created_at: { type: Date, required: true, default: Date.now },
     description: { type: String, required: true },
@@ -16,4 +32,5 @@ const userSchema = new mongoose.Schema({
     userId: { type: String, required: true },
 });
 
-module.exports = mongoose.model('users', userSchema);
+const user = mongoose.model<IUser>('user', userSchema)
+export default user;
