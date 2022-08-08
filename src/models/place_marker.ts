@@ -1,7 +1,7 @@
-import mongoose from "mongoose";
-import geoPoint from "./geo_point";
+import mongoose, { Schema } from "mongoose";
+import geopoint from "./geo_point";
 
-export interface IPlatform extends mongoose.Document { 
+export interface IPlatform extends mongoose.Document {
     online: Boolean,
     country: String,
     locality: String,
@@ -14,7 +14,7 @@ export const placeMarkerSchema = new mongoose.Schema({
     country: { type: String, required: true },
     locality: { type: String, required: true },
     adminArea: { type: String, required: true },
-    geopoint: { type: geoPoint, required: true },
+    geopoint: { type: Object, ref: 'geopoint' },
 });
 
 const placemarker = mongoose.model<IPlatform>('placemarker', placeMarkerSchema)

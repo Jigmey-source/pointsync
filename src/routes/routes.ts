@@ -3,12 +3,7 @@ import user from '../models/user';
 
 const router = express.Router();
 
-router.post('/list', async function (req, res) { 
-    var users = await user.find({ userId: req.body.userid });
-    res.json(users);
-});
-
-router.post('/add', async function (req, res) {
+router.get('/add', async function (req, res) {
     const muser = new user({
         blocked: {},
         description: 'helloooo',
@@ -16,11 +11,11 @@ router.post('/add', async function (req, res) {
         following: {},
         group: 'Tibet',
         hideFrom: {},
-        place_marker: {
+        placemarker: {
             online: true,
             country: 'India',
             locality: 'Manali',
-            geoPoint: {
+            geopoint: {
                 lat: 0,
                 lng: 0,
             },
