@@ -3,7 +3,7 @@ import user from '../models/user';
 
 const router = express.Router();
 
-router.post('/signUp', async function (req, res) {
+router.get('/signUp', async function (req, res) {
     // const muser = new user({
     //     blocked: {},
     //     description: 'helloooo',
@@ -37,10 +37,11 @@ router.post('/signUp', async function (req, res) {
         posts: 0,
         name: req.body.name,
         platform: req.body.platform,
-        profile_picture: {},
+        profile_picture: req.body.profile_picture,
         userId: req.body.userId,
     });
     await muser.save();
+    console.log("user has been saved");
 
     const response = { message: "User added: " + req.body.name };
     res.json(response);
