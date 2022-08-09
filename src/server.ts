@@ -2,7 +2,6 @@ import express from 'express';
 import mongoose from 'mongoose';
 import bodyParser from 'body-parser';
 import { Strings } from "./const/strings";
-import user from './models/user';
 
 const app = express();
 import router from './routes/routes';
@@ -12,11 +11,11 @@ app.use(bodyParser.json());
 
 mongoose.connect(strings.mongouri).then(function () {
     app.get('/', function (req, res) {
-        const response = { message: "API Works!" };
+        const response = { message: "Pointsync Server on Heroku" };
         res.json(response);
     });
 
-    app.use("/users", router);
+    app.use('/', router);
 });
 
 const port = process.env.PORT || 78;

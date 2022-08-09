@@ -1,5 +1,4 @@
 import mongoose from 'mongoose';
-import placemarker from './place_marker';
 
 export interface IUser extends mongoose.Document {
     blocked: Object,
@@ -28,10 +27,10 @@ export const userSchema = new mongoose.Schema({
     placemarker: { type: Object, ref: 'placemarker' },
     posts: { type: Number, required: true },
     name: { type: String, required: true },
-    platform: { type: Object, required: true },
-    profile_picture: { type: Object, required: true },
+    platform: { type: Object, ref: 'platform' },
+    profile_picture: { type: Object, ref: 'profile_picture' },
     userId: { type: String, required: true },
 });
 
-const user = mongoose.model<IUser>('user', userSchema)
+const user = mongoose.model<IUser>('users', userSchema)
 export default user;
