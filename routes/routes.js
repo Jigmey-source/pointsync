@@ -10,13 +10,6 @@ import feeds from '../models/feeds.js';
 
 const routes = new Route();
 
-
-router.post('/', async function (req, res) {
-    const response = { message: "start this party" }
-    console.log('muahhahahahahhahahaahhhash');
-    res.json(response);
-});
-
 router.post(routes.signUp, async function (req, res) {
     const muser = new user({
         group: req.body.group,

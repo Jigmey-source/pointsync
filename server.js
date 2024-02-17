@@ -45,6 +45,12 @@ try {
     app.use('/search', search);
     app.use('/notify', notify);
     app.use('/delete', deleteuser);
+
+    app.use('/', (req, res) => {
+        const response = { message: "start this party now" }
+        console.log('muahhahahahahhahahaahhhash');
+        res.json(response);
+    });
 };
 
 const port = process.env.PORT || 5500;
