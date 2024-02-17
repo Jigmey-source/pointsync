@@ -36,15 +36,10 @@ try {
 } catch (e) {
     console.log(e);
 } finally {
-    // app.get('/', function (req, res) {
-    //     const response = { message: "Pointsync Server on Heroku" };
+    // app.get('/', (req, res) => {
+    //     const response = { message: "start this shit" }
     //     res.json(response);
     // });
-
-    app.get('/', (req, res) => {
-        const response = { message: "start this shit" }
-        res.json(response);
-    });
 
     app.use('/', routes);
     app.use('/post', post);
