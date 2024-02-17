@@ -33,6 +33,7 @@ admin.initializeApp({
 });
 
 const connectmongodb = async () => {
+    console.log('inside connecting mongodb function');
     try {
         const conn = await connect(mongodb);
         console.log(`MONGODB connection secured : ${conn.connection.host}`);
@@ -40,6 +41,7 @@ const connectmongodb = async () => {
         console.log(`There seems to be an error connecting to mongodb : ${error}`);
         process.exit(1);
     }
+    console.log('mongodb connection after the try catch finished');
 };
 
 connectmongodb();
