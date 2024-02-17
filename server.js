@@ -36,10 +36,10 @@ try {
 } catch (e) {
     console.log(e);
 } finally {
-    app.use('/', (req, res) => {
-        const response = { message: "start this shit" }
-        res.json(response);
-    });
+    // app.use('/', (req, res) => {
+    //     const response = { message: "start this shit" }
+    //     res.json(response);
+    // });
 
     app.use('/', routes);
     app.use('/post', post);
