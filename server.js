@@ -31,16 +31,10 @@ admin.initializeApp({
 });
 
 try {
-    // connect('mongodb://mongo:SANi5qe0QzpPmAQYiIrI@containers-us-west-41.railway.app:5500');
     connect('mongodb+srv://jigmey:fr33t1b3t@cluster0.bsbuyml.mongodb.net/Pointsync?retryWrites=true&w=majority');
 } catch (e) {
     console.log(e);
 } finally {
-    // app.use('/', (req, res) => {
-    //     const response = { message: "start this shit" }
-    //     res.json(response);
-    // });
-
     app.use('/', routes);
     app.use('/post', post);
     app.use('/record', record);
