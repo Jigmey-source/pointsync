@@ -12,18 +12,18 @@ import admin from 'firebase-admin';
 app.use(urlencoded({ extended: false }));
 app.use(json());
 
-import routes from './lib/routes/routes.js';
-import post from './lib/routes/post.js';
-import record from './lib/routes/record.js';
-import user from './lib/routes/user.js';
-import search from './lib/routes/search.js';
-import edit from './lib/routes/edit.js';
-import store from './lib/routes/store.js';
-import locality from './lib/routes/locality.js';
-import notify from './lib/routes/notify.js';
-import deleteuser from './lib/routes/delete.js';
+import routes from './routes/routes.js';
+import post from './routes/post.js';
+import record from './routes/record.js';
+import user from './routes/user.js';
+import search from './routes/search.js';
+import edit from './routes/edit.js';
+import store from './routes/store.js';
+import locality from './routes/locality.js';
+import notify from './routes/notify.js';
+import deleteuser from './routes/delete.js';
 
-const serviceAccount = "./lib/pointsync-5d5bf-firebase-adminsdk-sta42-140fb8a7fc.json";
+const serviceAccount = "./pointsync-5d5bf-firebase-adminsdk-sta42-140fb8a7fc.json";
 
 admin.initializeApp({
     credential: admin.credential.cert(serviceAccount),
