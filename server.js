@@ -13,7 +13,6 @@ app.use(urlencoded({ extended: false }));
 app.use(json());
 
 import routes from './routes/routes.js';
-import createuser from './controllers/registration.js';
 import post from './routes/post.js';
 import record from './routes/record.js';
 import user from './routes/user.js';
@@ -46,7 +45,6 @@ const connectmongodb = async () => {
 
 connectmongodb();
 
-app.use('/createuser', createuser);
 app.use('/', routes);
 app.use('/post', post);
 app.use('/record', record);
