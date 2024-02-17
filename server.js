@@ -54,6 +54,11 @@ try {
 };
 
 const port = process.env.PORT || 5500;
-app.listen(port, function () {
+const server = app.listen(port, function () {
     console.log('server started at: ' + port);
+});
+
+process.on("unhandledRejection", (error, promise) => {
+    console.log(`SEEMS TO BE AN ERROR: ${error}`);
+    server.close(() => process.exit(1));
 });
