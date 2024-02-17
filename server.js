@@ -42,9 +42,8 @@ try {
     // });
 
     app.get('/', (req, res) => {
-        return res.json({
-            message: "start this shit"
-        });
+        const response = { message: "start this shit" }
+        res.json(response);
     });
 
     app.use('/', routes);
