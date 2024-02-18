@@ -12,16 +12,16 @@ import admin from 'firebase-admin';
 app.use(urlencoded({ extended: false }));
 app.use(json());
 
-import routes from './routes/routes.js';
-import post from './routes/post.js';
-import record from './routes/record.js';
-import user from './routes/user.js';
-import search from './routes/search.js';
-import edit from './routes/edit.js';
-import store from './routes/store.js';
-import locality from './routes/locality.js';
-import notify from './routes/notify.js';
-import deleteuser from './routes/delete.js';
+import routes from './controllers/routes.js';
+import post from './controllers/post.js';
+import record from './controllers/record.js';
+import user from './controllers/user.js';
+import search from './controllers/search.js';
+import edit from './controllers/edit.js';
+import store from './controllers/store.js';
+import locality from './controllers/locality.js';
+import notify from './controllers/notify.js';
+import deleteuser from './controllers/delete.js';
 
 const serviceAccount = "./pointsync-5d5bf-firebase-adminsdk-sta42-140fb8a7fc.json";
 const mongodb = "mongodb+srv://jigmey:fr33t1b3t@cluster0.bsbuyml.mongodb.net/Pointsync?retryWrites=true&w=majority";

@@ -10,7 +10,7 @@ import feeds from '../models/feeds.js';
 
 const routes = new Route();
 
-router.post('/createuser', async function (req, res) {
+router.post(routes.createuser, async function (req, res) {
     const muser = new user({
         group: req.body.group,
         placemarker: req.body.placemarker,
@@ -29,25 +29,6 @@ router.post('/createuser', async function (req, res) {
     }
     console.log('after createuser try catch function ddddddddddddddddddddddd');
 });
-
-// router.post(routes.signUp, async function (req, res) {
-//     const muser = new user({
-//         group: req.body.group,
-//         placemarker: req.body.placemarker,
-//         name: req.body.name,
-//         token: req.body.token,
-//         userId: req.body.userId,
-//     });
-
-//     try {
-//         await muser.save();
-//         const response = { message: "New User has been created" };
-//         res.json(response);
-//     } catch (e) {
-//         console.log('ERROR: creating new user ' + e);
-//         res.json(e);
-//     }
-// });
 
 router.post(routes.savetoken, async function (req, res) {
     user.updateOne(
