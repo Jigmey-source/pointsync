@@ -23,7 +23,7 @@ import locality from './controllers/locality.js';
 import notify from './controllers/notify.js';
 import deleteuser from './controllers/delete.js';
 
-const serviceAccount = "./pointsync-5d5bf-firebase-adminsdk-sta42-140fb8a7fc.json";
+const serviceAccount = "pointsync-5d5bf-firebase-adminsdk-sta42-140fb8a7fc.json";
 const mongodb = "mongodb+srv://jigmey:fr33t1b3t@cluster0.bsbuyml.mongodb.net/Pointsync?retryWrites=true&w=majority";
 
 admin.initializeApp({
