@@ -52,7 +52,7 @@ router.post(routes.placetosearch, async function (req, res) {
                 res.json(result);
             }
         }
-    );
+    ).explain("executionStats");
 });
 
 router.post(routes.storetosearch, async function (req, res) {
