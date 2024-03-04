@@ -210,7 +210,7 @@ function incrementcomments(link, i) {
         { $inc: { 'totalcomments': i } },
     ).catch(function (e) {
         console.log('Error incrementing posts: ' + e);
-    })
+    });
 }
 
 router.post(routes.addlike, async function (req, res) {
@@ -434,6 +434,7 @@ function publishtofeeds(id, follower, data) {
     });
 }
 
+//TODO this is probably replaced with routes.get at [line 28] so this probably has no use delete it but confirm first
 router.post(routes.post, async function (req, res) {
     post.findOne({ link: req.body.link }, function (e, doc) {
         if (e) {

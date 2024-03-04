@@ -9,7 +9,7 @@ import feeds from '../models/feeds.js';
 import stores from '../models/store.js';
 import followers from '../models/followers.js';
 import snapshots from '../models/snapshots.js';
-import searches from '../models/search_history.js';
+import searchhistory from '../models/search_history.js';
 import notifications from '../models/notifications.js';
 import records from '../models/records.js';
 import Route from '../const/route.js';
@@ -124,7 +124,7 @@ function updatenameinfollowers(id, name) {
 }
 
 function updatenameinsearches(id, name) {
-    searches.updateMany(
+    searchhistory.updateMany(
         { 'users.userId': id },
         { $set: { 'users.$[el].name': name } },
         { arrayFilters: [{ 'el.userId': id }] },
@@ -218,7 +218,7 @@ function updatelinkinfollowers(id, link) {
 }
 
 function updatelinkinsearches(id, link) {
-    searches.updateMany(
+    searchhistory.updateMany(
         { 'users.userId': id },
         { $set: { 'users.$[el].link': link } },
         { arrayFilters: [{ 'el.userId': id }] },

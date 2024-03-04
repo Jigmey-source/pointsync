@@ -146,7 +146,7 @@ router.post(routes.seen, async function (req, res) {
                 res.json(doc);
             }
         }
-    )
+    );
 });
 
 export default router;

@@ -49,7 +49,7 @@ function deletecatalogue(link) {
         console.log('Error deleting catalogue: ' + e);
     })
 }
-
+ 
 router.post(routes.owner, async function (req, res) {
     try {
         updatestore(req.body.link, req.body.admin);
@@ -71,6 +71,7 @@ function updatestore(link, admin) {
     });
 };
 
+//TODO probably do updateItems
 function updatestores(link, admin) {
     stores.updateMany(
         { parent: link },
@@ -80,6 +81,7 @@ function updatestores(link, admin) {
     })
 };
 
+//TODO add it to update folder since it updates on admin of the store
 router.post(routes.adminrequest, async function (req, res) {
     console.log(req.body);
     const data = {

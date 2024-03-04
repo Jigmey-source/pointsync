@@ -12,16 +12,11 @@ import admin from 'firebase-admin';
 app.use(urlencoded({ extended: false }));
 app.use(json());
 
-import routes from './controllers/routes.js';
-import post from './controllers/post.js';
-import record from './controllers/record.js';
-import user from './controllers/user.js';
-import search from './controllers/search.js';
-import edit from './controllers/edit.js';
-import store from './controllers/store.js';
-import locality from './controllers/locality.js';
-import notify from './controllers/notify.js';
-import deleteuser from './controllers/delete.js';
+import create from './create/routes.js';
+import read from './read/routes.js';
+import update from './update/routes.js';
+//cant name the import to delete because [delete] is a javascript operator
+import erase from './delete/routes.js';
 
 const serviceAccount = "./pointsync-5d5bf-firebase-adminsdk-sta42-140fb8a7fc.json";
 const mongodb = "mongodb+srv://jigmey:fr33t1b3t@cluster0.bsbuyml.mongodb.net/Pointsync?retryWrites=true&w=majority";
@@ -45,16 +40,10 @@ const connectmongodb = async () => {
 
 connectmongodb();
 
-app.use('/', routes);
-app.use('/post', post);
-app.use('/record', record);
-app.use('/user', user);
-app.use('/edit', edit);
-app.use('/locality', locality);
-app.use('/store', store);
-app.use('/search', search);
-app.use('/notify', notify);
-app.use('/delete', deleteuser);
+app.use('/create', create);
+app.use('/read', read);
+app.use('/update', update);
+app.use('/delete', erase);
 
 app.use('/', (req, res) => {
     const response = { message: "start this party now" }

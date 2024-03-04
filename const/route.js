@@ -51,24 +51,21 @@ export class Route {
 
         this.markers = '/markers';
 
+        this.newreview = '/new_review';
+
         this.onlineusers = '/online_users';
         this.online = '/online';
+        this.owner = '/owner';
 
         this.post = '/post';
         this.posts = '/posts';
+        this.placefromsearch = '/remove_place_from_search_history';
+        this.placetosearch = '/add_place_to_search_history';  
         
         this.records = '/records';
         this.relocated = '/relocated';
         this.reports = '/reports';
         this.reviews = '/reviews';
-
-        this.newreview = '/new_review';
-        
-        this.owner = '/owner';
-
-        this.placefromsearch = '/remove_place_from_search_history';
-        this.placetosearch = '/add_place_to_search_history';
-
         this.recommend = '/recommend';
         this.response = '/response';
 
