@@ -1,7 +1,7 @@
 import { Router } from "express";
 import {
     comment, icon, inventory, like, notification,
-    recommend, report, review, snapshot, store, user
+    recommend, report, review, snapshot, store, account
 } from "./controllers";
 
 const router = Router();
@@ -26,6 +26,6 @@ router.post('/inventory', inventory);
 
 router.post('/store', store);
 
-router.post('/user', user);
+router.post('/user', account);
 
 export default router;
