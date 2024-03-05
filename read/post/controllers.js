@@ -146,7 +146,7 @@ export const comments = async (req, res) => {
     });
 }
 
-export const readlikes = async (req, res) => { 
+export const getlikes = async (req, res) => { 
     const page = req.query.get || 0;
     const perPage = 20;
     likes.aggregate([
