@@ -1,4 +1,5 @@
 import { Router } from "express";
+import user from "../models/user";
 import {
     comment, icon, inventory, like, notification,
     recommend, report, review, snapshot, store, account
@@ -26,6 +27,6 @@ router.post('/inventory', inventory);
 
 router.post('/store', store);
 
-router.post('/user', account);
+router.post('/account', account);
 
 export default router;
