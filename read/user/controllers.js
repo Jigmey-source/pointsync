@@ -1,6 +1,5 @@
-import user from "../../models/user";
-import followers from "../../models/followers";
-
+import user from "../../models/user.js";
+import followers from "../../models/followers.js";
 
 export const currentlocation = async (req, res) => {
     user.findOne(

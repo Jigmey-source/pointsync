@@ -1,10 +1,10 @@
 import { Router } from "express";
-import { placehistory, userhistory } from "./history/controllers";
-import { newnotifications, notifications } from "./notification/controllers";
-import { checklike, comments, feeds, landmarks, likes, localityposts, markers, post, snapshots } from "./post/controllers";
-import { store, checkstar, catalogue, reviews, commends, stores, newplaces, searchrecord } from "./store/controllers";
-import { currentlocation, followers, following, hidefrom, newusers, online, onlinepeople, user } from "./user/controllers";
-import { reports } from "./reports/controllers";
+import { placehistory, userhistory } from "./history/controllers.js";
+import { newnotifications, notifications } from "./notification/controllers.js";
+import { checklike, comments, feeds, landmarks, likes, localityposts, markers, post, snapshots } from "./post/controllers.js";
+import { store, checkstar, catalogue, reviews, commends, stores, newplaces, searchrecord } from "./store/controllers.js";
+import { currentlocation, followers, following, hidefrom, newusers, online, onlinepeople, user } from "./user/controllers.js";
+import { reports } from "./reports/controllers.js";
 
 const router = Router();
 
