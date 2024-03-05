@@ -1,5 +1,5 @@
 import admin from 'firebase-admin';
-import user from "../../models/user";
+import user from "../../models/user.js";
 
 export async function getToken(id) {
     var token;

@@ -1,4 +1,4 @@
-import notifications from "../../models/notifications";
+import notifications from "../../models/notifications.js";
 
 export const notification = async (req, res) => { 
     notifications.updateMany(

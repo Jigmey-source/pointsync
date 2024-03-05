@@ -1,12 +1,12 @@
-import user from "../../../models/user";
-import post from "../../../models/post";
-import feeds from "../../../models/feeds";
-import stores from "../../../models/store";
-import likes from "../../../models/likes";
-import icons from "../../../models/icons";
-import followers from "../../../models/followers";
-import searchhistory from "../../../models/search_history";
-import snapshots from "../../../models/snapshots";
+import user from "../../../models/user.js";
+import post from "../../../models/post.js";
+import feeds from "../../../models/feeds.js";
+import stores from "../../../models/store.js";
+import likes from "../../../models/likes.js";
+import icons from "../../../models/icons.js";
+import followers from "../../../models/followers.js";
+import searchhistory from "../../../models/search_history.js";
+import snapshots from "../../../models/snapshots.js";
 
 export function deleteinfollowing(id) {
     user.updateMany(

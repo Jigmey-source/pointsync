@@ -1,21 +1,21 @@
 import { Router } from "express";
-import Route from "../const/route";
-import { deleteinhistory } from "../update/history/functions";
-import { deleteinlocality } from "../update/record/functions";
-import { deleteinfollowing } from "../update/user/updatemany/functions";
-import { deleteinreviews } from "../update/store/functions";
-import { deleteincommends } from "../update/store/functions";
-import { deleteincomments } from "../update/post/functions";
-import { deleteinlikes } from "../update/post/functions";
+import Route from "../const/route.js";
+import { deleteinhistory } from "../update/history/functions.js";
+import { deleteinlocality } from "../update/record/functions.js";
+import { deleteinfollowing } from "../update/user/updatemany/functions.js";
+import { deleteinreviews } from "../update/store/functions.js";
+import { deleteincommends } from "../update/store/functions.js";
+import { deleteincomments } from "../update/post/functions.js";
+import { deleteinlikes } from "../update/post/functions.js";
 import {
     comment, item, like, notification, post,
     recommendation, report, review, specificnotification
-} from "./controllers";
+} from "./controllers.js";
 import {
     deleteauth, deleteuser, deletefeeds, deletefollowers,
     deletenotifications, deletesnapshots, deleteusersearchhistory,
     deleteinstores, deleteinposts, deleteinreports, deleteicons
-} from "./user/functions";
+} from "./user/functions.js";
 
 
 const router = Router();

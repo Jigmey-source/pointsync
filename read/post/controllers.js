@@ -1,8 +1,8 @@
-import feeds from "../../models/feeds";
-import icons from "../../models/icons";
-import likes from "../../models/likes";
-import post from "../../models/post";
-import snapshots from "../../models/snapshots";
+import feeds from "../../models/feeds.js";
+import icons from "../../models/icons.js";
+import likes from "../../models/likes.js";
+import post from "../../models/post.js";
+import snapshots from "../../models/snapshots.js";
 
 export const localityposts = async (req, res) => { 
     const page = req.query.get || 0;

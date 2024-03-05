@@ -1,4 +1,4 @@
-import feeds from "../../models/feeds";
+import feeds from "../../models/feeds.js";
 
 export function deleteinfeeds(id, link) {
     feeds.updateOne(

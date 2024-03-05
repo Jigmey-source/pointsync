@@ -1,7 +1,7 @@
 import {
     updatepostdescription, updatesnapdescription,
     updateicondescription, updatedescriptioninfeeds
-} from "./functions";
+} from "./functions.js";
 
 export const postdescription = async (req, res) => {
     try {

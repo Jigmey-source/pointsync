@@ -1,6 +1,4 @@
-import records from "../../models/records";
-import stores from "../../models/store";
-import notifications from "../../models/notifications";
+import stores from "../../models/store.js";
 
 export function deleteinreviews(id) {
     stores.updateMany(

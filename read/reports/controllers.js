@@ -1,4 +1,4 @@
-import reports from "../../models/reports";
+import reports from "../../models/reports.js";
 
 export const reports = async (req, res) => { 
     const page = req.query.get || 0;

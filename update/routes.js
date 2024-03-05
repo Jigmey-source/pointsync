@@ -1,20 +1,20 @@
 import { Router } from "express";
 
-import { notification } from "./notification/controllers";
-import { postdescription } from "./post/controllers";
+import { notification } from "./notification/controllers.js";
+import { postdescription } from "./post/controllers.js";
 import {
     newplacetohistory, newstoretohistory, newusertohistory,
     pullplacefromhistory, pulluserfromhistory
-} from "./history/controllers";
+} from "./history/controllers.js";
 import {
     adminrequest, cancelrequest, event, image,
     owner, response, storedescription
-} from "./store/controllers";
+} from "./store/controllers.js";
 import {
     alternatetoken, bio, block, disablelocation, display,
     enablelocation, follow, followee, group, hide, name,
     profilepicture, relocation, token, unblock, unfollow, work
-} from "./user/controllers";
+} from "./user/controllers.js";
 
 const router = Router();
 

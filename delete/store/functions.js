@@ -1,5 +1,5 @@
-import catalogues from "../../models/catalogues";
-import stores from "../../models/store";
+import catalogues from "../../models/catalogues.js";
+import stores from "../../models/store.js";
 
 export function deletestore(link) {
     stores.deleteOne({

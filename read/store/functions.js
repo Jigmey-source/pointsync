@@ -1,4 +1,4 @@
-import stores from "../../models/store";
+import stores from "../../models/store.js";
 
 export async function calculateaveragerate(common) {
     var rate;

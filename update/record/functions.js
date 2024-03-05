@@ -1,4 +1,4 @@
-import records from "../../models/records";
+import records from "../../models/records.js";
 
 //TODO change functionname to pushrecord
 export function addrecord(locality, adminArea, data) {

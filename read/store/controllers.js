@@ -1,6 +1,6 @@
-import stores from "../../models/store";
-import catalogues from "../../models/catalogues";
-import records from "../../models/records";
+import stores from "../../models/store.js";
+import catalogues from "../../models/catalogues.js";
+import records from "../../models/records.js";
 
 export const store = async (req, res) => { 
     stores.findOne({ link: req.body.link }, function (e, doc) {

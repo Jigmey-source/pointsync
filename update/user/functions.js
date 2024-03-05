@@ -1,6 +1,6 @@
-import user from "../../models/user";
-import followers from "../../models/followers";
-import searchhistory from "../../models/search_history";
+import user from "../../models/user.js";
+import followers from "../../models/followers.js";
+import searchhistory from "../../models/search_history.js";
 
 export function addfollowers(req) {
     followers.updateOne(

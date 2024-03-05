@@ -1,4 +1,4 @@
-import notifications from "../../models/notifications";
+import notifications from "../../models/notifications.js";
 
 export const newnotifications = async (req, res) => { 
     notifications.aggregate([

@@ -1,9 +1,9 @@
-import stores from "../../models/store";
-import { updateinnotifications } from "../notification/functions";
-import { updateinrecord } from "../record/functions";
-import { updateeventinstore } from "./functions";
-import { updateeventinrecords } from "../record/functions";
-import { updatestore, updatestores, updateinstore, updateinchildstores } from "./functions";
+import stores from "../../models/store.js";
+import { updateinnotifications } from "../notification/functions.js";
+import { updateinrecord } from "../record/functions.js";
+import { updateeventinstore } from "./functions.js";
+import { updateeventinrecords } from "../record/functions.js";
+import { updatestore, updatestores, updateinstore, updateinchildstores } from "./functions.js";
 
 export const response = async (req, res) => {
     const data = {

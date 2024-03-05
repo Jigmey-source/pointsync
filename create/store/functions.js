@@ -1,5 +1,5 @@
-import stores from "../../models/store";
-import catalogues from "../../models/catalogues";
+import stores from "../../models/store.js";
+import catalogues from "../../models/catalogues.js";
 
 export function addstore(req) {
     const add = new stores(req.body);

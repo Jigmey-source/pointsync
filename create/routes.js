@@ -2,7 +2,7 @@ import { Router } from "express";
 import {
     comment, icon, inventory, like, notification,
     recommend, report, review, snapshot, store, account
-} from "./controllers";
+} from "./controllers.js";
 
 const router = Router();
 

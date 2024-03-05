@@ -1,4 +1,4 @@
-import searchhistory from "../../models/search_history";
+import searchhistory from "../../models/search_history.js";
 
 export const newusertohistory = async (req, res) => { 
     const data = {

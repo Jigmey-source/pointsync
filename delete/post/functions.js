@@ -1,4 +1,4 @@
-import post from "../../models/post";
+import post from "../../models/post.js";
 
 export function deletePost(link) {
     post.deleteOne({

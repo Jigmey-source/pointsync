@@ -1,4 +1,4 @@
-import followers from "../../models/followers";
+import followers from "../../models/followers.js";
 export async function myfollowers(id) {
     console.log('INSIDE MYFOLLOWERS METHOD');
     console.log(id);

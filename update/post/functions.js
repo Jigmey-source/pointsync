@@ -1,8 +1,8 @@
-import post from "../../models/post";
-import icons from "../../models/icons";
-import feeds from "../../models/feeds";
-import snapshots from "../../models/snapshots";
-import likes from "../../models/likes";
+import post from "../../models/post.js";
+import icons from "../../models/icons.js";
+import feeds from "../../models/feeds.js";
+import snapshots from "../../models/snapshots.js";
+import likes from "../../models/likes.js";
 
 export function deletecomment(id, link, comment) {
     post.updateOne(

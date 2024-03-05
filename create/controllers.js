@@ -1,21 +1,21 @@
-import post from "../models/post";
-import user from "../models/user";
-import reports from "../models/reports";
-import DataStructure from "./data_structure";
-import { getToken } from "./notification/functions";
-import { addrecord } from "../update/record/functions";
-import { deleteinfeeds } from "../update/feeds/functions";
-import { addcatalogue, addstore } from "./store/functions";
-import { setrateinrecord } from "../update/record/functions";
-import { calculateaveragerate } from "../read/store/functions";
-import { addrecommendation, addreview } from "../update/store/functions";
-import { incrementrecommendationsinrecord } from "../update/record/functions";
-import { incrementrecommendationsinstore, incrementreviewinstore } from "../update/store/functions";
-import { myfollowers } from "../read/followers/functions";
-import { incrementposts } from "../update/user/functions";
-import { publishtofeeds } from "../update/feeds/functions";
-import { buildnotification } from "./notification/functions";
-import { addnotification } from "../update/notification/functions";
+import post from "../models/post.js";
+import user from "../models/user.js";
+import reports from "../models/reports.js";
+import DataStructure from "./data_structure.js";
+import { getToken } from "./notification/functions.js";
+import { addrecord } from "../update/record/functions.js";
+import { deleteinfeeds } from "../update/feeds/functions.js";
+import { addcatalogue, addstore } from "./store/functions.js";
+import { setrateinrecord } from "../update/record/functions.js";
+import { calculateaveragerate } from "../read/store/functions.js";
+import { addrecommendation, addreview } from "../update/store/functions.js";
+import { incrementrecommendationsinrecord } from "../update/record/functions.js";
+import { incrementrecommendationsinstore, incrementreviewinstore } from "../update/store/functions.js";
+import { myfollowers } from "../read/followers/functions.js";
+import { incrementposts } from "../update/user/functions.js";
+import { publishtofeeds } from "../update/feeds/functions.js";
+import { buildnotification } from "./notification/functions.js";
+import { addnotification } from "../update/notification/functions.js";
 import {
     savesnapshot, incrementcomments,
     incrementlikes, saveicon, addlike, addcomment
@@ -164,7 +164,7 @@ export const store = async (req, res) => {
     }
 }
 
-export default account = async function (req, res) {
+export const account = async (req, res) => {
     const muser = new user({
         group: req.body.group,
         placemarker: req.body.placemarker,

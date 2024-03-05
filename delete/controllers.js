@@ -1,24 +1,24 @@
-import reports from "../models/reports";
-import notifications from "../models/notifications";
-import { deletePost } from "./post/functions";
-import { datastructure } from "./notification/functions";
-import { updatenotifications } from "../update/notification/functions";
-import { incrementposts } from "../update/user/functions";
-import { pullmanyinfeeds } from "../update/feeds/functions";
+import reports from "../models/reports.js";
+import notifications from "../models/notifications.js";
+import { deletePost } from "./post/functions.js";
+import { datastructure } from "./notification/functions.js";
+import { updatenotifications } from "../update/notification/functions.js";
+import { incrementposts } from "../update/user/functions.js";
+import { pullmanyinfeeds } from "../update/feeds/functions.js";
 import {
     deletecomment, undolike, incrementcomments,
     incrementlikes, deleteinsnapshots, deleteinicons
-} from "../update/post/functions";
-import { deletestore, deletecatalogue } from "./store/functions";
-import { deleterecord } from "../update/record/functions";
-import { setrateinrecord } from "../update/record/functions";
-import { calculateaveragerate } from "../read/store/functions";
-import { deletereview, deleterecommendation } from "../update/store/functions";
-import { incrementrecommendationsinrecord } from "../update/record/functions";
+} from "../update/post/functions.js";
+import { deletestore, deletecatalogue } from "./store/functions.js";
+import { deleterecord } from "../update/record/functions.js";
+import { setrateinrecord } from "../update/record/functions.js";
+import { calculateaveragerate } from "../read/store/functions.js";
+import { deletereview, deleterecommendation } from "../update/store/functions.js";
+import { incrementrecommendationsinrecord } from "../update/record/functions.js";
 import {
     deletereview, deleterecommendation,
     incrementrecommendationsinstore, incrementreviewinstore
-} from "../update/store/functions";
+} from "../update/store/functions.js";
 
 export const notification = async (req, res) => { 
     notifications.updateOne(

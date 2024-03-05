@@ -1,4 +1,4 @@
-import notifications from "../../models/notifications";
+import notifications from "../../models/notifications.js";
 
 //TODO change functionname to pushnotification
 export function addnotification(req) {

@@ -1,7 +1,7 @@
-import user from "../../models/user";
-import { addfollowers, incrementfollowers } from "./functions";
-import { pullfollowing, newfollowers, incrementfollowing, incrementfollowers } from "./functions";
-import { blockuser, removesearchhistory } from "./functions";
+import user from "../../models/user.js";
+import { addfollowers, incrementfollowers } from "./functions.js";
+import { pullfollowing, newfollowers, incrementfollowing, incrementfollowers } from "./functions.js";
+import { blockuser, removesearchhistory } from "./functions.js";
 import {
     updatenameinprofile, updatenameinposts, updatenameinfeeds,
     updatenameinreviews, updatenameincommends, updatenameincomments,
@@ -9,7 +9,7 @@ import {
     updatenameinsearches, updatenameinsnapshots, updatelinkinprofile,
     updatelinkinreviews, updatelinkincommends, updatelinkincomments,
     updatelinkinlikes, updatelinkinfollowers, updatelinkinsearches
-} from "./updatemany/functions";
+} from "./updatemany/functions.js";
 
 export const token = async (req, res) => {
     user.updateOne(

@@ -1,13 +1,13 @@
 import admin from 'firebase-admin';
-import user from '../../models/user';
-import feeds from '../../models/feeds';
-import followers from '../../models/followers';
-import notifications from '../../models/notifications';
-import snapshots from '../../models/snapshots';
-import searchhistory from '../../models/search_history';
-import stores from '../../models/store';
-import post from '../../models/post';
-import icons from '../../models/icons';
+import user from '../../models/user.js';
+import feeds from '../../models/feeds.js';
+import followers from '../../models/followers.js';
+import notifications from '../../models/notifications.js';
+import snapshots from '../../models/snapshots.js';
+import searchhistory from '../../models/search_history.js';
+import stores from '../../models/store.js';
+import post from '../../models/post.js';
+import icons from '../../models/icons.js';
 
 export async function deleteauth(id) { 
     try {
