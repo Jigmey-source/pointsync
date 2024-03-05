@@ -40,7 +40,9 @@ const connectmongodb = async () => {
 
 connectmongodb();
 
+console.log('above the create method');
 app.use('/create', create);
+console.log('below the create method');
 app.use('/read', read);
 app.use('/update', update);
 app.use('/delete', erase);
