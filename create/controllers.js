@@ -19,7 +19,7 @@ import { addnotification } from "../update/notification/functions.js";
 import {
     savesnapshot, incrementcomments,
     incrementlikes, saveicon, addlike, addcomment
-} from "../update/post/functions";
+} from "../update/post/functions.js";
 
 const datastructure = new DataStructure();
 
