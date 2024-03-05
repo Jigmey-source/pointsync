@@ -1,5 +1,4 @@
 import { Router } from "express";
-import user from "../models/user";
 import {
     comment, icon, inventory, like, notification,
     recommend, report, review, snapshot, store, account

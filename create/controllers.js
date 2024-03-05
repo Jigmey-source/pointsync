@@ -164,7 +164,7 @@ export const store = async (req, res) => {
     }
 }
 
-export default account = async (req, res) => {
+export default account = async function (req, res) {
     const muser = new user({
         group: req.body.group,
         placemarker: req.body.placemarker,
