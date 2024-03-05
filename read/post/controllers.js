@@ -35,7 +35,7 @@ export const checklike = async (req, res) => {
     });
 }
 
-export const post = async (req, res) => {
+export const getpost = async (req, res) => {
     post.findOne({ link: req.body.link }, function (e, doc) {
         if (e) {
             console.log('Error getting post: ' + e);
@@ -47,7 +47,7 @@ export const post = async (req, res) => {
     });
 }
 
-export const snapshots = async (req, res) => { 
+export const getsnaps = async (req, res) => { 
     const page = req.query.get || 0;
     const perPage = 20;
     snapshots.aggregate([
@@ -86,7 +86,7 @@ export const landmarks = async (req, res) => {
     });
 }
 
-export const feeds = async (req, res) => { 
+export const getfeeds = async (req, res) => { 
     const page = req.query.get || 0;
     const perPage = 20;
     feeds.aggregate([
@@ -146,7 +146,7 @@ export const comments = async (req, res) => {
     });
 }
 
-export const likes = async (req, res) => { 
+export const readlikes = async (req, res) => { 
     const page = req.query.get || 0;
     const perPage = 20;
     likes.aggregate([

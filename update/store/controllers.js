@@ -1,9 +1,7 @@
 import stores from "../../models/store.js";
 import { updateinnotifications } from "../notification/functions.js";
-import { updateinrecord } from "../record/functions.js";
-import { updateeventinstore } from "./functions.js";
-import { updateeventinrecords } from "../record/functions.js";
-import { updatestore, updatestores, updateinstore, updateinchildstores } from "./functions.js";
+import { updateinrecord, updateeventinrecords } from "../record/functions.js";
+import { updateeventinstore, updatestore, updatestores, updateinstore, updateinchildstores } from "./functions.js";
 
 export const response = async (req, res) => {
     const data = {
@@ -26,7 +24,7 @@ export const response = async (req, res) => {
     );
 }
 
-export const storedescription = async (req, res) => { 
+export const storedescription = async (req, res) => {
     stores.updateOne(
         { link: req.body.link },
         { $set: { description: req.body.description } },
@@ -41,7 +39,7 @@ export const storedescription = async (req, res) => {
     );
 }
 
-export const event = async (req, res) => { 
+export const event = async (req, res) => {
     try {
         updateeventinrecords(req.body.link, req.body.event);
         updateeventinstore(req.body.link, req.body.event);
@@ -51,7 +49,7 @@ export const event = async (req, res) => {
     }
 }
 
-export const image = async (req, res) => { 
+export const image = async (req, res) => {
     try {
         updateinstore(req.body.link, req.body.common);
         updateinchildstores(req.body.link, req.body.common);
@@ -63,7 +61,7 @@ export const image = async (req, res) => {
     }
 }
 
-export const owner = async (req, res) => { 
+export const owner = async (req, res) => {
     try {
         updatestore(req.body.link, req.body.admin);
         updatestores(req.body.link, req.body.admin);
@@ -74,7 +72,7 @@ export const owner = async (req, res) => {
     }
 }
 
-export const adminrequest = async (req, res) => { 
+export const adminrequest = async (req, res) => {
     console.log(req.body);
     const data = {
         id: req.body.id,
@@ -96,7 +94,7 @@ export const adminrequest = async (req, res) => {
     );
 }
 
-export const cancelrequest = async (req, res) => { 
+export const cancelrequest = async (req, res) => {
     stores.updateOne(
         { link: req.body.link },
         { $unset: { 'request': { userId: req.body.userId } } },

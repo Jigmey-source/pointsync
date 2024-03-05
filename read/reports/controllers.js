@@ -1,6 +1,6 @@
 import reports from "../../models/reports.js";
 
-export const reports = async (req, res) => { 
+export const getreports = async (req, res) => { 
     const page = req.query.get || 0;
     const perPage = 20;
     reports.find()

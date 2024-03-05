@@ -15,7 +15,7 @@ export const currentlocation = async (req, res) => {
         }).select('placemarker -_id');
 }
 
-export const user = async (req, res) => {
+export const getuser = async (req, res) => {
     user.findOne(
         { userId: req.body.userId },
         function (e, doc) {
@@ -49,7 +49,7 @@ export const following = async (req, res) => {
     });
 }
 
-export const followers = async (req, res) => {
+export const getfollowers = async (req, res) => {
     console.log('inside following peopple');
     console.log(req.body);
     const page = req.query.get || 0;

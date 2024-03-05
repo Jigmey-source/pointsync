@@ -1,7 +1,7 @@
-import notifications from "../../models/notifications.js";
+import notification from "../../models/notifications.js";
 
 export const newnotifications = async (req, res) => { 
-    notifications.aggregate([
+    notification.aggregate([
         { $match: { userId: req.body.userId } },
         { $unwind: '$notifications' },
         { $replaceRoot: { newRoot: '$notifications' } },
@@ -21,7 +21,7 @@ export const newnotifications = async (req, res) => {
 export const notifications = async (req, res) => { 
     const page = req.query.get || 0;
     const perPage = 20;
-    notifications.aggregate([
+    notification.aggregate([
         { $match: { userId: req.body.userId } },
         { $unwind: '$notifications' },
         { $replaceRoot: { newRoot: '$notifications' } },

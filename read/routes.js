@@ -1,10 +1,10 @@
 import { Router } from "express";
 import { placehistory, userhistory } from "./history/controllers.js";
 import { newnotifications, notifications } from "./notification/controllers.js";
-import { checklike, comments, feeds, landmarks, likes, localityposts, markers, post, snapshots } from "./post/controllers.js";
+import { checklike, comments, getfeeds, landmarks, readlikes, localityposts, markers, getpost, getsnaps } from "./post/controllers.js";
 import { store, checkstar, catalogue, reviews, commends, stores, newplaces, searchrecord } from "./store/controllers.js";
-import { currentlocation, followers, following, hidefrom, newusers, online, onlinepeople, user } from "./user/controllers.js";
-import { reports } from "./reports/controllers.js";
+import { currentlocation, getfollowers, following, hidefrom, newusers, online, onlinepeople, getuser } from "./user/controllers.js";
+import { getreports } from "./reports/controllers.js";
 
 const router = Router();
 
@@ -20,19 +20,19 @@ router.post('/locality_posts', localityposts);
 
 router.post('/checklike', checklike);
 
-router.post('/post', post);
+router.post('/post', getpost);
 
-router.post('/snapshots', snapshots);
+router.post('/snapshots', getsnaps);
 
 router.post('/landmarks', landmarks);
 
-router.post('/feeds', feeds);
+router.post('/feeds', getfeeds);
 
 router.post('/markers', markers);
 
 router.post('/comments', comments);
 
-router.post('/likes', likes);
+router.post('/likes', readlikes);
 
 router.post('/store', store);
 
@@ -52,11 +52,11 @@ router.post('/search_record', searchrecord);
 
 router.post('/current_location', currentlocation);
 
-router.post('/user', user);
+router.post('/user', getuser);
 
 router.post('/following', following);
 
-router.post('/followers', followers);
+router.post('/followers', getfollowers);
 
 router.post('/hidefrom', hidefrom);
 
@@ -67,6 +67,6 @@ router.post('/online', online);
 router.post('/new_users', newusers);
 
 // TODO this function is called in reports app which is different than pointsync 
-router.post('/reports', reports);
+router.post('/reports', getreports);
 
 export default router;

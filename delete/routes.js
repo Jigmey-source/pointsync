@@ -3,10 +3,8 @@ import Route from "../const/route.js";
 import { deleteinhistory } from "../update/history/functions.js";
 import { deleteinlocality } from "../update/record/functions.js";
 import { deleteinfollowing } from "../update/user/updatemany/functions.js";
-import { deleteinreviews } from "../update/store/functions.js";
-import { deleteincommends } from "../update/store/functions.js";
-import { deleteincomments } from "../update/post/functions.js";
-import { deleteinlikes } from "../update/post/functions.js";
+import { deleteinreviews, deleteincommends } from "../update/store/functions.js";
+import { deleteinlikes, deleteincomments } from "../update/post/functions.js";
 import {
     comment, item, like, notification, post,
     recommendation, report, review, specificnotification
@@ -16,7 +14,6 @@ import {
     deletenotifications, deletesnapshots, deleteusersearchhistory,
     deleteinstores, deleteinposts, deleteinreports, deleteicons
 } from "./user/functions.js";
-
 
 const router = Router();
 const routes = new Route();
