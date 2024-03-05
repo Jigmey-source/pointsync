@@ -26,32 +26,46 @@ admin.initializeApp({
     storageBucket: "pointsync-5d5bf.appspot.com",
 });
 
-const connectmongodb = async () => {
-    console.log('inside connecting mongodb function');
-    try {
-        const conn = await connect(mongodb);
-        console.log(`MONGODB connection secured : ${conn.connection.host}`);
-    } catch (e) { 
-        console.log(`There seems to be an error connecting to mongodb : ${error}`);
-        process.exit(1);
-    }
-    console.log('mongodb connection after the try catch finished');
-};
+// const connectmongodb = async () => {
+//     console.log('inside connecting mongodb function');
+//     try {
+//         const conn = await connect(mongodb);
+//         console.log(`MONGODB connection secured : ${conn.connection.host}`);
+//     } catch (e) {
+//         console.log(`There seems to be an error connecting to mongodb : ${error}`);
+//         process.exit(1);
+//     }
+//     console.log('mongodb connection after the try catch finished');
+// };
 
-connectmongodb();
+// connectmongodb();
 
-console.log('above the create method');
-app.use('/create', create);
-console.log('below the create method');
-app.use('/read', read);
-app.use('/update', update);
-app.use('/delete', erase);
+// console.log('above the create method');
+// app.use('/create', create);
+// console.log('below the create method');
+// app.use('/read', read);
+// app.use('/update', update);
+// app.use('/delete', erase);
 
-app.use('/', (req, res) => {
-    const response = { message: "start this party now" }
-    console.log('muahhahahahahhahahaahhhash');
-    res.json(response);
-});
+try {
+    const conn = await connect(mongodb);
+    console.log(`MONGODB connection secured : ${conn.connection.host}`);
+} catch (e) {
+    console.log(`There seems to be an error connecting to mongodb : ${error}`);
+    process.exit(1);
+} finally {
+    app.use('/', (req, res) => {
+        const response = { message: "start this party now" }
+        console.log('muahhahahahahhahahaahhhash');
+        res.json(response);
+    });
+    console.log('above the create method');
+    app.use('/create', create);
+    console.log('below the create method');
+    app.use('/read', read);
+    app.use('/update', update);
+    app.use('/delete', erase);
+}
 
 const port = process.env.PORT || 5500;
 const server = app.listen(port, function () {
