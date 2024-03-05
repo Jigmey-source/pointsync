@@ -8,65 +8,38 @@ import { getreports } from "./reports/controllers.js";
 
 const router = Router();
 
-router.post('/user_history', userhistory);
-
-router.post('/place_history', placehistory);
-
-router.post('/new_notifications', newnotifications);
-
-router.post('/notifications', notifications);
-
-router.post('/locality_posts', localityposts);
-
-router.post('/checklike', checklike);
-
-router.post('/post', getpost);
-
-router.post('/snapshots', getsnaps);
-
-router.post('/landmarks', landmarks);
-
-router.post('/feeds', getfeeds);
-
-router.post('/markers', markers);
-
-router.post('/comments', comments);
-
-router.post('/likes', readlikes);
-
-router.post('/store', store);
-
-router.post('/checkstar', checkstar);
-
 router.post('/catalogue', catalogue);
-
-router.post('/reviews', reviews);
-
+router.post('/checklike', checklike);
+router.post('/checkstar', checkstar);
 router.post('/commends', commends);
-
-router.post('/stores', getstores);
-
-router.post('/new_places', newplaces);
-
-router.post('/search_record', searchrecord);
-
+router.post('/comments', comments);
 router.post('/current_location', currentlocation);
-
-router.post('/user', getuser);
-
+router.post('/feeds', getfeeds);
 router.post('/following', following);
-
 router.post('/followers', getfollowers);
-
 router.post('/hidefrom', hidefrom);
-
-router.post('/online_people', onlinepeople);
-
-router.post('/online', online);
-
+router.post('/likes', readlikes);
+router.post('/landmarks', landmarks);
+router.post('/locality_posts', localityposts);
+router.post('/markers', markers);
+router.post('/new_notifications', newnotifications);
+router.post('/notifications', notifications);
 router.post('/new_users', newusers);
+router.post('/new_places', newplaces);
+router.post('/online', online);
+router.post('/online_people', onlinepeople);
+router.post('/place_history', placehistory);
+router.post('/post', getpost);
 
 // TODO this function is called in reports app which is different than pointsync 
 router.post('/reports', getreports);
+
+router.post('/reviews', reviews);
+router.post('/snapshots', getsnaps);
+router.post('/store', store);
+router.post('/stores', getstores);
+router.post('/search_record', searchrecord);
+router.post('/user', getuser);
+router.post('/user_history', userhistory);
 
 export default router;

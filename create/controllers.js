@@ -1,5 +1,4 @@
 import post from "../models/post.js";
-// import user from "../models/user.js";
 import reports from "../models/reports.js";
 import DataStructure from "./data_structure.js";
 import { myfollowers } from "../read/followers/functions.js";

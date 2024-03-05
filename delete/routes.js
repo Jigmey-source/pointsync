@@ -18,23 +18,15 @@ import {
 const router = Router();
 const routes = new Route();
 
-router.post('/notification', notification);
-
-router.post('/specific_notification', specificnotification);
-
-router.post('/post', post);
-
 router.post('/comment', comment);
-
-router.post('/like', like);
-
-router.post('/report', report);
-
 router.post('/item', item);
-
+router.post('/like', like);
+router.post('/notification', notification);
+router.post('/post', post);
+router.post('/report', report);
 router.post('/recommendation', recommendation);
-
 router.post('/review', review);
+router.post('/specific_notification', specificnotification);
 
 ///TODO used in reports
 router.post(routes.user, async function (req, res) {
