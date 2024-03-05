@@ -1,5 +1,5 @@
 import post from "../models/post.js";
-import user from "../models/user.js";
+// import user from "../models/user.js";
 import reports from "../models/reports.js";
 import DataStructure from "./data_structure.js";
 import { getToken } from "./notification/functions.js";
@@ -164,22 +164,22 @@ export const store = async (req, res) => {
     }
 }
 
-export const account = async (req, res) => {
-    const muser = new user({
-        group: req.body.group,
-        placemarker: req.body.placemarker,
-        name: req.body.name,
-        token: req.body.token,
-        userId: req.body.userId,
-    });
-    console.log('inside createuser method registration aaaaaaaaaaaaaaaaaaaaaaaaaaaa');
-    try {
-        await muser.save();
-        const response = { message: "New User has been created" };
-        res.json(response);
-    } catch (e) {
-        console.log('ERROR: creating new user ' + e);
-        res.json(e);
-    }
-    console.log('after createuser try catch function ddddddddddddddddddddddd');
-}
+// export const account = async (req, res) => {
+//     const muser = new user({
+//         group: req.body.group,
+//         placemarker: req.body.placemarker,
+//         name: req.body.name,
+//         token: req.body.token,
+//         userId: req.body.userId,
+//     });
+//     console.log('inside createuser method registration aaaaaaaaaaaaaaaaaaaaaaaaaaaa');
+//     try {
+//         await muser.save();
+//         const response = { message: "New User has been created" };
+//         res.json(response);
+//     } catch (e) {
+//         console.log('ERROR: creating new user ' + e);
+//         res.json(e);
+//     }
+//     console.log('after createuser try catch function ddddddddddddddddddddddd');
+// }
