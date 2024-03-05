@@ -89,7 +89,7 @@ export const commends = async (req, res) => {
     });
 }
 
-export const stores = async (req, res) => {
+export const getstores = async (req, res) => {
     const page = req.query.get || 0;
     const perPage = 20;
     records.aggregate([

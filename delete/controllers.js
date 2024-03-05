@@ -12,7 +12,6 @@ import {
 import { deletestore, deletecatalogue } from "./store/functions.js";
 import { deleterecord, setrateinrecord, incrementrecommendationsinrecord } from "../update/record/functions.js";
 import { calculateaveragerate } from "../read/store/functions.js";
-import { deletereview, deleterecommendation } from "../update/store/functions.js";
 import {
     deletereview, deleterecommendation,
     incrementrecommendationsinstore, incrementreviewinstore

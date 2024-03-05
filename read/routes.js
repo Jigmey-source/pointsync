@@ -2,7 +2,7 @@ import { Router } from "express";
 import { placehistory, userhistory } from "./history/controllers.js";
 import { newnotifications, notifications } from "./notification/controllers.js";
 import { checklike, comments, getfeeds, landmarks, readlikes, localityposts, markers, getpost, getsnaps } from "./post/controllers.js";
-import { store, checkstar, catalogue, reviews, commends, stores, newplaces, searchrecord } from "./store/controllers.js";
+import { store, checkstar, catalogue, reviews, commends, getstores, newplaces, searchrecord } from "./store/controllers.js";
 import { currentlocation, getfollowers, following, hidefrom, newusers, online, onlinepeople, getuser } from "./user/controllers.js";
 import { getreports } from "./reports/controllers.js";
 
@@ -44,7 +44,7 @@ router.post('/reviews', reviews);
 
 router.post('/commends', commends);
 
-router.post('/stores', stores);
+router.post('/stores', getstores);
 
 router.post('/new_places', newplaces);
 
