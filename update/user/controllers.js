@@ -1,7 +1,8 @@
 import user from "../../models/user.js";
-import { addfollowers, incrementfollowers } from "./functions.js";
-import { pullfollowing, newfollowers, incrementfollowing, incrementfollowers } from "./functions.js";
-import { blockuser, removesearchhistory } from "./functions.js";
+import {
+    addfollowers, pullfollowing, newfollowers, incrementfollowing,
+    incrementfollowers, blockuser, removesearchhistory 
+} from "./functions.js";
 import {
     updatenameinprofile, updatenameinposts, updatenameinfeeds,
     updatenameinreviews, updatenameincommends, updatenameincomments,
