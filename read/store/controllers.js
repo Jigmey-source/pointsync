@@ -2,7 +2,7 @@ import stores from "../../models/store.js";
 import catalogues from "../../models/catalogues.js";
 import records from "../../models/records.js";
 
-export const store = async (req, res) => { 
+export const store = async (req, res) => {
     stores.findOne({ link: req.body.link }, function (e, doc) {
         if (e) {
             console.log('Error getting Store: ' + e);
@@ -71,6 +71,8 @@ export const reviews = async (req, res) => {
 }
 
 export const commends = async (req, res) => {
+    const page = req.query.get || 0;
+    const perPage = 20;
     stores.aggregate([
         { $match: { link: req.body.link } },
         { $unwind: '$commends' },
