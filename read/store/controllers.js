@@ -85,8 +85,8 @@ export const commends = async (req, res) => {
             console.log('Error getting commends: ' + e);
             res.send(e);
         } else {
-            console.log(doc);
-            res.json('Successfully received commends');
+            console.log('Successfully received commends');
+            res.json(doc);
         }
     });
 }
