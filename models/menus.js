@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
 const { Schema } = mongoose;
 
-const catalogue = Schema({
+const menu = Schema({
     event: { type: String, default: '' },
     type: { type: String, required: true },
     title: { type: String, required: true },
@@ -12,8 +12,8 @@ const catalogue = Schema({
 
 const schema = Schema({
     link: { type: String, required: true },
-    catalogue: [catalogue]
+    menu: [menu]
 });
 
-const catalogues = mongoose.model('catalogues', schema);
-export default catalogues;
+const menus = mongoose.model('menus', schema);
+export default menus;

@@ -4,10 +4,11 @@ import DataStructure from "./data_structure.js";
 import { myfollowers } from "../read/followers/functions.js";
 import { incrementposts } from "../update/user/functions.js";
 import { addnotification } from "../update/notification/functions.js";
-import { addcatalogue, addstore } from "./store/functions.js";
+import { addmenu, addstore } from "./store/functions.js";
 import { calculateaveragerate } from "../read/store/functions.js";
 import { getToken, buildnotification } from "./notification/functions.js";
 import { deleteinfeeds, publishtofeeds } from "../update/feeds/functions.js";
+import { incrementrecommendationsinmenu } from "../update/menu/functions.js";
 import { addrecord, setrateinrecord, incrementrecommendationsinrecord } from "../update/record/functions.js";
 import {
     savesnapshot, incrementcomments,
@@ -114,6 +115,7 @@ export const recommend = async (req, res) => {
         addrecommendation(req.body.common, data);
         incrementrecommendationsinstore(req.body.common, 1);
         incrementrecommendationsinrecord(req.body.common, 1);
+        incrementrecommendationsinmenu(req.body.common, 1);
         res.json('Recommendation added');
     } catch (e) {
         console.log('Error recommending: ' + e);
@@ -142,7 +144,7 @@ export const inventory = async (req, res) => {
     try {
         addrecord(req.body.locality, req.body.adminArea, data);
         addstore(req);
-        addcatalogue(req.body.common, data);
+        addmenu(req.body.common, data);
         res.json('New record added! ' + req.body.title);
     } catch (e) {
         res.json(e);

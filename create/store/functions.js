@@ -1,13 +1,13 @@
 import stores from "../../models/store.js";
-import catalogues from "../../models/catalogues.js";
+import menus from "../../models/menus.js";
 
 export function addstore(req) {
     const add = new stores(req.body);
     add.save();
 }
 
-export function addcatalogue(link, data) {
-    catalogues.updateOne(
+export function addmenu(link, data) {
+    menus.updateOne(
         { link: link },
         { $push: { catalogue: data } },
         { upsert: true, new: true },
