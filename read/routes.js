@@ -2,13 +2,12 @@ import { Router } from "express";
 import { placehistory, userhistory } from "./history/controllers.js";
 import { newnotifications, notifications } from "./notification/controllers.js";
 import { checklike, comments, getfeeds, landmarks, getlikes, localityposts, markers, getpost, getsnaps } from "./post/controllers.js";
-import { store, checkstar, catalogue, reviews, commends, getstores, newplaces, searchrecord } from "./store/controllers.js";
+import { store, checkstar, menu, reviews, commends, getstores, newplaces, searchrecord } from "./store/controllers.js";
 import { currentlocation, getfollowers, following, hidefrom, newusers, online, onlinepeople, getuser } from "./user/controllers.js";
 import { getreports } from "./reports/controllers.js";
 
 const router = Router();
 
-router.post('/catalogue', catalogue);
 router.post('/checklike', checklike);
 router.post('/checkstar', checkstar);
 router.post('/commends', commends);
@@ -22,6 +21,7 @@ router.post('/likes', getlikes);
 router.post('/landmarks', landmarks);
 router.post('/locality_posts', localityposts);
 router.post('/markers', markers);
+router.post('/menu', menu);
 router.post('/new_notifications', newnotifications);
 router.post('/notifications', notifications);
 router.post('/new_users', newusers);

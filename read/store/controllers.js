@@ -28,19 +28,19 @@ export const checkstar = async (req, res) => {
     );
 }
 
-export const catalogue = async (req, res) => {
+export const menu = async (req, res) => {
     const page = req.query.get || 0;
     const perPage = 20;
     menus.aggregate([
         { $match: { link: req.body.link } },
-        { $unwind: '$catalogue' },
-        { $replaceRoot: { newRoot: '$catalogue' } },
+        { $unwind: '$menu' },
+        { $replaceRoot: { newRoot: '$menu' } },
         { $sort: { 'averagerate': -1, 'recommendations': -1 } },
         { $skip: (page * perPage) },
         { $limit: perPage },
     ], function (e, doc) {
         if (e) {
-            console.log('Error getting catalogue: ' + e);
+            console.log('Error getting menu: ' + e);
             res.send(500, e);
         } else {
             console.log(doc);
