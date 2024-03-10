@@ -9,9 +9,9 @@ export function addstore(req) {
 export function addmenu(link, data) {
     menus.updateOne(
         { link: link },
-        { $push: { catalogue: data } },
+        { $push: { menu: data } },
         { upsert: true, new: true },
     ).catch(function (e) {
-        console.log('Error adding catalogue: ' + e);
+        console.log('Error adding menu: ' + e);
     });
 }
