@@ -28,5 +28,5 @@ const schema = Schema({
     stores: [stores],
 });
 
-const history = mongoose.model('history', schema);
+const history = mongoose.model('whatever', schema);
 export default history;
