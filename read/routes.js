@@ -21,7 +21,7 @@ router.post('/likes', getlikes);
 router.post('/landmarks', landmarks);
 router.post('/locality_posts', localityposts);
 router.post('/markers', markers);
-router.post('/menu', menu);
+router.post('/menus', menu);
 router.post('/new_notifications', newnotifications);
 router.post('/notifications', notifications);
 router.post('/new_users', newusers);
