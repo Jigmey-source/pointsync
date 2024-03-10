@@ -1,4 +1,4 @@
-import menus from "../../models/menus";
+import menus from "../../models/menus.js";
 
 export function incrementrecommendationsinmenu(link, i) {
     menus.updateOne(
