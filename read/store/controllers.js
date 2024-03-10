@@ -1,5 +1,5 @@
 import stores from "../../models/store.js";
-import catalogues from "../../models/catalogues.js";
+import menus from "../../models/menus.js";
 import records from "../../models/records.js";
 
 export const store = async (req, res) => {
@@ -31,7 +31,7 @@ export const checkstar = async (req, res) => {
 export const catalogue = async (req, res) => {
     const page = req.query.get || 0;
     const perPage = 20;
-    catalogues.aggregate([
+    menus.aggregate([
         { $match: { link: req.body.link } },
         { $unwind: '$catalogue' },
         { $replaceRoot: { newRoot: '$catalogue' } },

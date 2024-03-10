@@ -1,4 +1,4 @@
-import searchhistory from "../../models/search_history.js";
+import history from "../../models/history.js";
 
 export const newusertohistory = async (req, res) => { 
     const data = {
@@ -6,7 +6,7 @@ export const newusertohistory = async (req, res) => {
         name: req.body.name,
         userId: req.body.userId,
     };
-    searchhistory.updateOne(
+    history.updateOne(
         //req.body.id is the id of the user
         //req.body.useId is the id of the other user that the user has searched for
         { userId: req.body.id },
@@ -30,7 +30,7 @@ export const newplacetohistory = async (req, res) => {
         adminArea: req.body.adminArea,
         country: req.body.country,
     };
-    searchhistory.updateOne(
+    history.updateOne(
         { userId: req.body.userId },
         { $push: { places: data } },
         { upsert: true, new: true },
@@ -52,7 +52,7 @@ export const newstoretohistory = async (req, res) => {
         title: req.body.title,
         type: req.body.type,
     };
-    searchhistory.updateOne(
+    history.updateOne(
         { userId: req.body.userId },
         { $push: { stores: data } },
         { upsert: true, new: true },
@@ -69,7 +69,7 @@ export const newstoretohistory = async (req, res) => {
 }
 
 export const pulluserfromhistory = async (req, res) => { 
-    searchhistory.updateOne(
+    history.updateOne(
         { userId: req.body.userId },
         { $pull: { 'users': { userId: req.body.id } } },
         function (e, doc) {
@@ -85,7 +85,7 @@ export const pulluserfromhistory = async (req, res) => {
 }
 
 export const pullplacefromhistory = async (req, res) => { 
-    searchhistory.updateOne(
+    history.updateOne(
         { userId: req.body.userId },
         { $pull: { 'places': { locality: req.body.locality, adminArea: req.body.adminArea } } },
         function (e, doc) {

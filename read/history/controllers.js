@@ -1,7 +1,7 @@
-import searchhistory from "../../models/search_history.js";
+import history from "../../models/history.js";
 
 export const userhistory = async (req, res) => {
-    searchhistory.aggregate([
+    history.aggregate([
         { $match: { userId: req.body.userId } },
         { $unwind: '$users' },
         { $replaceRoot: { newRoot: '$users' } },
@@ -16,7 +16,7 @@ export const userhistory = async (req, res) => {
 }
 
 export const placehistory = async (req, res) => { 
-    searchhistory.aggregate([
+    history.aggregate([
         { $match: { userId: req.body.userId } },
         { $unwind: '$places' },
         { $replaceRoot: { newRoot: '$places' } },

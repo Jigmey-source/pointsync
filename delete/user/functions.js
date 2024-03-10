@@ -4,7 +4,7 @@ import feeds from '../../models/feeds.js';
 import followers from '../../models/followers.js';
 import notifications from '../../models/notifications.js';
 import snapshots from '../../models/snapshots.js';
-import searchhistory from '../../models/search_history.js';
+import history from '../../models/history.js';
 import stores from '../../models/store.js';
 import post from '../../models/post.js';
 import icons from '../../models/icons.js';
@@ -69,7 +69,7 @@ export function deletesnapshots(id) {
 }
 
 export function deleteusersearchhistory(id) {
-    searchhistory.deleteOne({
+    history.deleteOne({
         userId: id
     }).then(function () {
         console.log('USER DELETED IN SEARCHHISTORY COLLECTION');

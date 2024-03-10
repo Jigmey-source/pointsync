@@ -1,4 +1,4 @@
-import catalogues from "../../models/catalogues.js";
+import menus from "../../models/menus.js";
 import stores from "../../models/store.js";
 
 export function deletestore(link) {
@@ -12,7 +12,7 @@ export function deletestore(link) {
 }
 
 export function deletecatalogue(link) {
-    catalogues.deleteOne({
+    menus.deleteOne({
         link: link
     }).then(function () {
         console.log('Deleting catalogue successful');

@@ -5,7 +5,7 @@ import stores from "../../../models/store.js";
 import likes from "../../../models/likes.js";
 import icons from "../../../models/icons.js";
 import followers from "../../../models/followers.js";
-import searchhistory from "../../../models/search_history.js";
+import history from "../../../models/history.js";
 import snapshots from "../../../models/snapshots.js";
 
 export function deleteinfollowing(id) {
@@ -108,7 +108,7 @@ export function updatenameinfollowers(id, name) {
 }
 
 export function updatenameinsearches(id, name) {
-    searchhistory.updateMany(
+    history.updateMany(
         { 'users.userId': id },
         { $set: { 'users.$[el].name': name } },
         { arrayFilters: [{ 'el.userId': id }] },
@@ -187,7 +187,7 @@ export function updatelinkinfollowers(id, link) {
 }
 
 export function updatelinkinsearches(id, link) {
-    searchhistory.updateMany(
+    history.updateMany(
         { 'users.userId': id },
         { $set: { 'users.$[el].link': link } },
         { arrayFilters: [{ 'el.userId': id }] },

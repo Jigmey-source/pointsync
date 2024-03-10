@@ -1,7 +1,7 @@
-import searchhistory from "../../models/search_history.js";
+import history from "../../models/history.js";
 
 export function deleteinhistory(id) {
-    searchhistory.updateMany(
+    history.updateMany(
         { 'users.userId': id },
         { $pull: { 'users': { userId: id } } }
     ).then(function () {

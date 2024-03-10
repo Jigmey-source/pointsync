@@ -28,5 +28,5 @@ const schema = Schema({
     stores: [stores],
 });
 
-const searchhistory = mongoose.model('search_history', schema);
-export default searchhistory;
+const history = mongoose.model('history', schema);
+export default history;

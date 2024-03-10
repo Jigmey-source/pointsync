@@ -1,6 +1,6 @@
 import user from "../../models/user.js";
 import followers from "../../models/followers.js";
-import searchhistory from "../../models/search_history.js";
+import history from "../../models/history.js";
 
 export function addfollowers(req) {
     followers.updateOne(
@@ -57,7 +57,7 @@ export function blockuser(id, userId) {
 }
 
 export function removesearchhistory(id, userId) {
-    searchhistory.updateOne(
+    history.updateOne(
         { userId: id },
         { $pull: { 'users': { userId: userId } } },
     ).catch(function (e) {
