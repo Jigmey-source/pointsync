@@ -2,6 +2,9 @@ import mongoose from 'mongoose';
 const { Schema } = mongoose;
 
 const icon = Schema({
+    lat: { type: Number },
+    lng: { type: Number },
+    type: { type: String },
     name: { type: String },
     link: { type: String },
     description: { type: String },
