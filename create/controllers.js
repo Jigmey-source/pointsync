@@ -15,7 +15,7 @@ import {
     incrementlikes, saveicon, addlike, addcomment
 } from "../update/post/functions.js";
 import {
-    addrecommendation, addreview, setrateinmenu,
+    addrecommendation, addreview,
     incrementrecommendationsinstore, incrementreviewinstore
 } from "../update/store/functions.js";
 
