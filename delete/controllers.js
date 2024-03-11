@@ -9,7 +9,7 @@ import {
     deletecomment, undolike, incrementcomments,
     incrementlikes, deleteinsnapshots, deleteinicons
 } from "../update/post/functions.js";
-import { deletestore, deletecatalogue } from "./store/functions.js";
+import { deletestore, deletemenu } from "./store/functions.js";
 import { deleterecord, setrateinrecord, incrementrecommendationsinrecord } from "../update/record/functions.js";
 import { calculateaveragerate } from "../read/store/functions.js";
 import {
@@ -92,7 +92,7 @@ export const item = async (req, res) => {
     try {
         deletestore(req.body.link);
         deleterecord(req.body.link);
-        deletecatalogue(req.body.link);
+        deletemenu(req.body.link);
         res.json();
     } catch (e) {
         console.log('delete record error: ' + e);

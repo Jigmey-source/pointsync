@@ -11,12 +11,11 @@ export function deletestore(link) {
     });
 }
 
-export function deletecatalogue(link) {
-    menus.deleteOne({
-        link: link
-    }).then(function () {
-        console.log('Deleting catalogue successful');
-    }).catch(function (e) {
-        console.log('Error deleting catalogue: ' + e);
+export function deletemenu(link) {
+    menus.updateOne(
+        { 'menu.link': link },
+        { $pull: { 'menu': { link: link } } },
+    ).catch(function (e) {
+        console.log('Error deleting menu: ' + e);
     });
 }
