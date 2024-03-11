@@ -60,7 +60,7 @@ export function setrateinrecord(link, rate) {
         { arrayFilters: [{ 'el.link': link }] },
     ).catch(function (e) {
         console.log('Error incrementing reviews in record: ' + e);
-    })
+    });
 }
 
 export function incrementrecommendationsinrecord(link, i) {

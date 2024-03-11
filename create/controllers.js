@@ -8,14 +8,14 @@ import { addmenu, addstore } from "./store/functions.js";
 import { calculateaveragerate } from "../read/store/functions.js";
 import { getToken, buildnotification } from "./notification/functions.js";
 import { deleteinfeeds, publishtofeeds } from "../update/feeds/functions.js";
-import { incrementrecommendationsinmenu } from "../update/menu/functions.js";
+import { setrateinmenu, incrementrecommendationsinmenu } from "../update/menu/functions.js";
 import { addrecord, setrateinrecord, incrementrecommendationsinrecord } from "../update/record/functions.js";
 import {
     savesnapshot, incrementcomments,
     incrementlikes, saveicon, addlike, addcomment
 } from "../update/post/functions.js";
 import {
-    addrecommendation, addreview,
+    addrecommendation, addreview, setrateinmenu,
     incrementrecommendationsinstore, incrementreviewinstore
 } from "../update/store/functions.js";
 
@@ -132,6 +132,23 @@ export const review = async (req, res) => {
         const rate = await calculateaveragerate(req.body.common);
         incrementreviewinstore(req.body.common, rate, 1);
         setrateinrecord(req.body.common, rate);
+        res.json(review);
+    } catch (e) {
+        console.log('Error addingreview: ' + e);
+        res.json(e);
+    }
+}
+
+export const productreview = async (req, res) => {
+    console.log('yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy');
+    console.log(req.body);
+    const review = datastructure.review(req);
+    try {
+        await addreview(req.body.common, review);
+        const rate = await calculateaveragerate(req.body.common);
+        incrementreviewinstore(req.body.common, rate, 1);
+        setrateinrecord(req.body.common, rate);
+        setrateinmenu(req.body.common, rate);
         res.json(review);
     } catch (e) {
         console.log('Error addingreview: ' + e);

@@ -1,7 +1,7 @@
 import { Router } from "express";
 import {
     comment, icon, inventory, like, notification,
-    recommend, report, review, snapshot, store,
+    productreview, recommend, report, review, snapshot, store,
 } from "./controllers.js";
 
 const router = Router();
@@ -11,6 +11,7 @@ router.post('/icon', icon);
 router.post('/like', like);
 router.post('/inventory', inventory);
 router.post('/notification', notification);
+router.post('/productreview', productreview);
 router.post('/report', report);
 router.post('/recommend', recommend);
 router.post('/review', review);
