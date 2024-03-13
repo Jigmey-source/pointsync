@@ -20,6 +20,7 @@ export function pullfollowing(id, userId) {
         console.log('Error Unfollowing ' + e);
     });
 }
+
 export function incrementfollowers(id, i) {
     user.updateOne(
         { userId: id },
