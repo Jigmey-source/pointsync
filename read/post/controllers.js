@@ -68,7 +68,7 @@ export const getsnaps = async (req, res) => {
 
 export const landmarks = async (req, res) => { 
     const page = req.query.get || 0;
-    const perPage = 1;
+    const perPage = 20;
     snapshots.aggregate([
         { $match: { userId: req.body.userId } },
         { $unwind: '$snaps' },
